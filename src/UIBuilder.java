@@ -43,7 +43,7 @@ public class UIBuilder {
     }
 
     public void addMenuOptions(String stat){
-        this.options.add("produce: " + stat);
+        this.options.add((this.options.size() + 1) + "produce: " + stat);
     }
 
     public void reset(){
