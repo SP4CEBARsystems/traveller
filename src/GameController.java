@@ -1,6 +1,9 @@
 public class GameController {
     // when "do this"         (used as the client of the InputAdapter)
     // set and use strategy   (also the client of strategies)
+
+    // prepare next day
+    // choose a random selection of strategies
     // draw UI                (Controls the builder)
 
     UIBuilder bunnyBuilder = new UIBuilder();
