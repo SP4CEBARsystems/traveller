@@ -7,5 +7,5 @@ CLI Game in Java
 ### Builder
 [src/UIBuilder.java](src/UIBuilder.java)
 ### Adapter
-[src/MoneyStrategies](src/MoneyStrategies)
+[src/UserInputAdapter](src/UserInputAdapter)
 
