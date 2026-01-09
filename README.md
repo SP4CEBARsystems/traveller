@@ -28,10 +28,16 @@ The strategies represent different jobs and will generate what happened after a 
 - Interface: [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java)
 - context: [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java)
 - Client: [src/GameState/GameContext.java](src/GameState/GameContext.java)
+- There are six strategies in the package.
 
 #### State
-State is game state, there are two states: choosing an occupation and working this occupation.
+State is game state, there are two states: choosing an occupation (InputState) and working this occupation and seeing the result of it (WorkingState).
 - Package: [src/GameState](src/GameState)
+- Interface: [src/GameState/IGameState.java](src/GameState/IGameState.java)
+- context: [src/GameState/GameContext.java](src/GameState/GameContext.java)
+- InputState: [src/GameState/InputState.java](src/GameState/InputState.java)
+- WorkingState: [src/GameState/WorkingState.java](src/GameState/WorkingState.java)
+- Client: [src/Main.java](src/Main.java)
 
 ### Creational Patterns
 #### Builder
@@ -42,6 +48,7 @@ The builder builds the CLI UI, it can build statistics to read and a list of opt
 #### Singleton
 The singleton will hold an array of all our different job strategies and will help the client with setting a job strategy.
 - Package: [src/StrategySingleton](src/StrategySingleton)
+- Singleton: [src/StrategySingleton/StrategyManager.java](src/StrategySingleton/StrategyManager.java)
 
 ### Structural Patterns
 #### Adapter
@@ -55,3 +62,6 @@ The adapter adapts user input from the user input (service) to a chosen menu ite
 #### Bridge
 The bridge will add a city property to a jobController controlled by Main, the city will affect how much job options are shown, the jobController will control the money Context.
 - Package: [src/JobLocationBridge](src/JobLocationBridge)
+- Abstraction: [src/JobLocationBridge/JobController.java](src/JobLocationBridge/JobController.java)
+- Interface: [src/JobLocationBridge/IAmACity.java](src/JobLocationBridge/IAmACity.java)
+- There are four concrete implementations.
