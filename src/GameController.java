@@ -6,6 +6,11 @@ public class GameController {
     // choose a random selection of strategies
     // draw UI                (Controls the builder)
 
+
+    // singleton expansion: there is one list of possible job strategies, I'll throw them into a singleton class
+    // state expansion: states: wait for input, display what happens during working with a slight delay
+    // Bridge expansion: make a cocrete implementation for each location, these will affect all jobs
+
     UIBuilder bunnyBuilder = new UIBuilder();
         bunnyBuilder.addBunnyEars();
         bunnyBuilder.addMenuOptions();
