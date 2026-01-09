@@ -28,6 +28,12 @@ The strategies represent different jobs and will generate what happened after a 
   - Interface: [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java)
   - Context: [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java)
   - There are six strategies in the package.
+      1. MoneyStrategyBeg: [src/MoneyStrategies/MoneyStrategyBeg.java](src/MoneyStrategies/MoneyStrategyBeg.java)
+      2. MoneyStrategyGamble: [src/MoneyStrategies/MoneyStrategyGamble.java](src/MoneyStrategies/MoneyStrategyGamble.java)
+      3. MoneyStrategyInvest: [src/MoneyStrategies/MoneyStrategyInvest.java](src/MoneyStrategies/MoneyStrategyInvest.java)
+      4. MoneyStrategyJob: [src/MoneyStrategies/MoneyStrategyJob.java](src/MoneyStrategies/MoneyStrategyJob.java)
+      5. MoneyStrategyLemonade: [src/MoneyStrategies/MoneyStrategyLemonade.java](src/MoneyStrategies/MoneyStrategyLemonade.java)
+      6. MoneyStrategyWebsite: [src/MoneyStrategies/MoneyStrategyWebsite.java](src/MoneyStrategies/MoneyStrategyWebsite.java)
 - Client: [src/GameState/GameContext.java](src/GameState/GameContext.java)
 
 #### State
@@ -44,11 +50,19 @@ State is game state, there are two states: choosing an occupation (InputState) a
 The builder builds the CLI UI, it can build statistics to read and a list of options that a user can choose from.
 - Package: [src/Builder](src/Builder)
   - Builder: [src/Builder/UIBuilder.java](src/Builder/UIBuilder.java)
+- Clients:
+    1. WorkingState: [src/GameState/WorkingState.java](src/GameState/WorkingState.java)
+    2. InputState: [src/GameState/InputState.java](src/GameState/InputState.java)
 
 #### Singleton
 The singleton will hold an array of all our different job strategies and will help the client with setting a job strategy.
 - Package: [src/StrategySingleton](src/StrategySingleton)
   - Singleton: [src/StrategySingleton/StrategyManager.java](src/StrategySingleton/StrategyManager.java)
+- Clients: 
+    1. Amsterdam: [src/JobLocationBridge/Amsterdam.java](src/JobLocationBridge/Amsterdam.java)
+    2. Middelburg: [src/JobLocationBridge/Middelburg.java](src/JobLocationBridge/Middelburg.java)
+    3. Ritthem: [src/JobLocationBridge/Ritthem.java](src/JobLocationBridge/Ritthem.java)
+    4. Zoutelande: [src/JobLocationBridge/Zoutelande.java](src/JobLocationBridge/Zoutelande.java)
 
 ### Structural Patterns
 #### Adapter
@@ -65,3 +79,8 @@ The bridge will add a city property to a jobController controlled by Main, the c
   - Interface: [src/JobLocationBridge/IAmACity.java](src/JobLocationBridge/IAmACity.java)
   - Abstraction: [src/JobLocationBridge/JobController.java](src/JobLocationBridge/JobController.java)
   - There are four concrete implementations.
+      1. Amsterdam: [src/JobLocationBridge/Amsterdam.java](src/JobLocationBridge/Amsterdam.java)
+      2. Middelburg: [src/JobLocationBridge/Middelburg.java](src/JobLocationBridge/Middelburg.java)
+      3. Ritthem: [src/JobLocationBridge/Ritthem.java](src/JobLocationBridge/Ritthem.java)
+      4. Zoutelande: [src/JobLocationBridge/Zoutelande.java](src/JobLocationBridge/Zoutelande.java)
+- Client: [src/GameState/GameContext.java](src/GameState/GameContext.java)
