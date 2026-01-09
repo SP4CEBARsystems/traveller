@@ -16,16 +16,18 @@ public class InputState implements IGameState {
 
     @Override
     public void handle(GameContext context) {
+        JobController jobController = context.getJobController();
+        String cityName = jobController.getCityName();
+
         UIBuilder builder = new UIBuilder();
         builder.reset();
         builder.addMenuTitle();
         builder.addStatDay(context.getDay());
         builder.addStatMoney(context.getMoneyContext().getTotalMoney());
+        builder.addCity(cityName);
 
-        JobController jobController = context.getJobController();
-        IMakeMoneyStrategy[] jobsArray = jobController.city.getJobs();
+        IMakeMoneyStrategy[] jobsArray = jobController.getAvailableJobs();
         List<IMakeMoneyStrategy> dailyOptions = Arrays.asList(jobsArray);
-
         for (IMakeMoneyStrategy strategy : dailyOptions) {
             builder.addJobOption(strategy.getJobName());
         }

@@ -33,7 +33,7 @@ public class UIBuilder {
     }
 
     public void addStatMoney(int stat){
-        this.stats.add("money: " + stat);
+        this.stats.add("money: $" + stat);
     }
 
     public void addStatOccupation(int stat){
@@ -42,6 +42,10 @@ public class UIBuilder {
 
     public void addStatProduce(int stat){
         this.stats.add("produce: " + stat);
+    }
+
+    public void addCity(String stat){
+        this.stats.add("City: " + stat);
     }
 
     public void addMenuOptions(String stat){
