@@ -2,6 +2,7 @@ import JobLocationBridge.JobController;
 import UserInputAdapter.ConsoleReader;
 import UserInputAdapter.UserInputMenuAdapter;
 import UserInputAdapter.IAmUserInputAdapter;
+import GameState.GameContext;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -12,18 +13,10 @@ public class Main {
         ConsoleReader reader = new ConsoleReader();
         IAmUserInputAdapter adapter = new UserInputMenuAdapter(reader);
 
-        JobController jobController = new JobController();
+        GameContext game = new GameContext(adapter);
 
-        while (true) {
-            JobController.showAvailableJobs();
-            int jobCount = JobController.getAvailableJobCount();
-            System.out.print("Please state your choice\n");
-            int choice = adapter.readChosenOption(jobCount);
-            if (choice == -1) {
-                continue;
-            }
-            System.out.printf("Chosen: %d\n", choice);
-            JobController.chooseJob(choice);
+        while (game.isRunning()) {
+            game.handleState();
         }
         // when "do this"         (used as the client of the InputAdapter)
         // set and use strategy   (also the client of strategies)
