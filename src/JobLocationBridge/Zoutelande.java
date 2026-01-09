@@ -4,7 +4,10 @@ import MoneyStrategies.IMakeMoneyStrategy;
 import StrategySingleton.StrategyManager;
 
 public class Zoutelande implements IAmACity {
+    String name = "Zoutelande";
+
     String description = "A coastal village with a nice beach and a lot of tourism.";
+
     IMakeMoneyStrategy[] jobs;
 
     Zoutelande () {
@@ -13,6 +16,14 @@ public class Zoutelande implements IAmACity {
             strategy.getStrategyByIndex(1),
             strategy.getStrategyByIndex(4),
         };
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public IMakeMoneyStrategy[] getJobs() {

@@ -4,7 +4,10 @@ import MoneyStrategies.IMakeMoneyStrategy;
 import StrategySingleton.StrategyManager;
 
 public class Ritthem implements IAmACity {
+    String name = "Ritthem";
+
     String description = "A farmer's village near industry and large harbors.";
+
     IMakeMoneyStrategy[] jobs;
 
     Ritthem () {
@@ -13,6 +16,14 @@ public class Ritthem implements IAmACity {
             strategy.getStrategyByIndex(0),
             strategy.getStrategyByIndex(5),
         };
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public IMakeMoneyStrategy[] getJobs() {

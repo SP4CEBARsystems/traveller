@@ -4,7 +4,10 @@ import MoneyStrategies.IMakeMoneyStrategy;
 import StrategySingleton.StrategyManager;
 
 public class Amsterdam implements IAmACity {
+    String name = "Amsterdam";
+
     String description = "A big city with canals.";
+
     IMakeMoneyStrategy[] jobs;
 
     Amsterdam () {
@@ -17,6 +20,14 @@ public class Amsterdam implements IAmACity {
             strategy.getStrategyByIndex(4),
             strategy.getStrategyByIndex(5)
         };
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public IMakeMoneyStrategy[] getJobs() {
