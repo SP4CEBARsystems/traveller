@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class JobController {
-    IAmACity city;
+    public IAmACity city;
 
     IAmACity[] cities = {
         new Middelburg(),
@@ -14,7 +14,7 @@ public class JobController {
         new Amsterdam()
     };
 
-    JobController () {
+    public JobController() {
         this.randomizeCity();
     }
 

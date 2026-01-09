@@ -1,9 +1,10 @@
 package GameState;
 
 import MoneyStrategies.IMakeMoneyStrategy;
-import StrategySingleton.StrategyManager;
 import UserInputAdapter.IAmUserInputAdapter;
 import Builder.UIBuilder;
+import JobLocationBridge.JobController;
+import java.util.Arrays;
 import java.util.List;
 
 public class InputState implements IGameState {
@@ -21,8 +22,9 @@ public class InputState implements IGameState {
         builder.addStatDay(context.getDay());
         builder.addStatMoney(context.getMoneyContext().getTotalMoney());
 
-        StrategyManager manager = StrategyManager.getInstance();
-        List<IMakeMoneyStrategy> dailyOptions = manager.getRandomStrategies(3);
+        JobController jobController = context.getJobController();
+        IMakeMoneyStrategy[] jobsArray = jobController.city.getJobs();
+        List<IMakeMoneyStrategy> dailyOptions = Arrays.asList(jobsArray);
 
         for (IMakeMoneyStrategy strategy : dailyOptions) {
             builder.addJobOption(strategy.getJobName());
