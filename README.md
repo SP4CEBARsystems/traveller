@@ -33,6 +33,6 @@ The singleton will hold an array of all our different strategies and will help t
 The adapter pattern lives in the package at [src/UserInputAdapter](src/UserInputAdapter).
 The adapter at [src/UserInputAdapter/UserInputMenuAdapter.java](src/UserInputAdapter/UserInputMenuAdapter.java) adapts user input from [src/UserInputAdapter/ConsoleReader.java](src/UserInputAdapter/ConsoleReader.java) to a chosen menu item, its client is at [src/Main.java](src/Main.java) and interface is [src/UserInputAdapter/IAmUserInputAdapter.java](src/UserInputAdapter/IAmUserInputAdapter.java).
 
-#### Bridge
+#### Decorator
 _Planned but not implemented._
 The bridge will add a city property to a jobController controlled by Main, the city will affect how much job options are shown, the jobController will control the money Context.

@@ -1,7 +1,29 @@
 package JobLocationBridge;
 
+import MoneyStrategies.IMakeMoneyStrategy;
+import StrategySingleton.StrategyManager;
+
 public class Amsterdam implements IAmACity {
-    public String[] getJobs() {
-        return new String[0];
+    String description = "A big city with canals.";
+    IMakeMoneyStrategy[] jobs;
+
+    Amsterdam () {
+        StrategyManager strategy = StrategyManager.getInstance();
+        this.jobs = new IMakeMoneyStrategy[]{
+            strategy.getStrategyByIndex(0),
+            strategy.getStrategyByIndex(1),
+            strategy.getStrategyByIndex(2),
+            strategy.getStrategyByIndex(3),
+            strategy.getStrategyByIndex(4),
+            strategy.getStrategyByIndex(5)
+        };
+    }
+
+    public IMakeMoneyStrategy[] getJobs() {
+        return this.jobs;
+    }
+
+    public int getJobCount() {
+        return this.jobs.length;
     }
 }

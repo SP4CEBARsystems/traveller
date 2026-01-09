@@ -1,5 +1,8 @@
 package JobLocationBridge;
 
+import MoneyStrategies.IMakeMoneyStrategy;
+
 public interface IAmACity {
-    public String[] getJobs();
+    public IMakeMoneyStrategy[] getJobs();
+    public int getJobCount();
 }
