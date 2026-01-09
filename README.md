@@ -11,7 +11,7 @@ All work has been divided equally over... just me. I, Boaz Crezee, made this wit
 ### Behavioral Patterns
 
 #### Strategy
-[src/MoneyStrategies](src/MoneyStrategies)
+The strategies live at [src/MoneyStrategies](src/MoneyStrategies). With interface [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java) and ccontext [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java)
 
 #### State
 _Planned but not implemented._
@@ -19,7 +19,7 @@ _Planned but not implemented._
 ### Creational Patterns
 
 #### Builder
-[src/UIBuilder.java](src/UIBuilder.java)
+The builder at [src/UIBuilder.java](src/UIBuilder.java) builds the CLI UI, it lists options that a user can choose from.
 
 #### Singleton
 _Planned but not implemented._
@@ -27,7 +27,10 @@ _Planned but not implemented._
 ### Structural Patterns
 
 #### Adapter
-[src/UserInputAdapter](src/UserInputAdapter)
+The adapter pattern lives in the package at [src/UserInputAdapter](src/UserInputAdapter).
+The adapter at [src/UserInputAdapter/UserInputMenuAdapter.java](src/UserInputAdapter/UserInputMenuAdapter.java) adapts user input from [src/UserInputAdapter/ConsoleReader.java](src/UserInputAdapter/ConsoleReader.java) to a chosen menu item, its client is at [src/Main.java](src/Main.java) and interface is [src/UserInputAdapter/IAmUserInputAdapter.java](src/UserInputAdapter/IAmUserInputAdapter.java).
 
-#### Facade
+#### Bridge
 _Planned but not implemented._
+The bridge will allow ... 
+make a cocrete implementation for each location, these will affect all jobs
