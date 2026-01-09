@@ -3,26 +3,29 @@ CLI Game in Java where each day you have to choose how to make money. It was ins
 
 ## Introduction
 This readme document explains the usage of various design patterns from [refactoring.guru](https://refactoring.guru) that are implemented within this program.
-### Authors And Workload
-All work has been divided equally over... just me. I, Boaz Crezee, made this without a teammate, I hope that is acceptable.
+### Authors 
+- Boaz Crezee
+- Gijs Borghouts (Has helped me as his second project, very kind of him)
 
 ## Design patterns
 
 ### Behavioral Patterns
 
 #### Strategy
-The strategies live at [src/MoneyStrategies](src/MoneyStrategies). With interface [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java) and ccontext [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java)
+The strategies live at [src/MoneyStrategies](src/MoneyStrategies). With interface [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java) and context [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java). [src/Main.java](src/Main.java) is the Client but is planned to be replaced by JobController.
 
 #### State
 _Planned but not implemented._
+State is game state, there are two states: choosing an occupation and working this occupation.
 
 ### Creational Patterns
 
 #### Builder
-The builder at [src/UIBuilder.java](src/UIBuilder.java) builds the CLI UI, it lists options that a user can choose from.
+The builder at [src/UIBuilder.java](src/UIBuilder.java) builds the CLI UI, it lists options that a user can choose from, it is controlled by [src/Main.java](src/Main.java).
 
 #### Singleton
 _Planned but not implemented._
+The singleton will hold an array of all our different strategies and will help the client with setting a strategy.
 
 ### Structural Patterns
 
@@ -32,5 +35,4 @@ The adapter at [src/UserInputAdapter/UserInputMenuAdapter.java](src/UserInputAda
 
 #### Bridge
 _Planned but not implemented._
-The bridge will allow ... 
-make a cocrete implementation for each location, these will affect all jobs
+The bridge will add a city property to a jobController controlled by Main, the city will affect how much job options are shown, the jobController will control the money Context.
