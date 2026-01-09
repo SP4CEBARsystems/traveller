@@ -1,3 +1,4 @@
+import JobLocationBridge.JobController;
 import UserInputAdapter.ConsoleReader;
 import UserInputAdapter.UserInputMenuAdapter;
 import UserInputAdapter.IAmUserInputAdapter;
@@ -10,13 +11,19 @@ public class Main {
 
         ConsoleReader reader = new ConsoleReader();
         IAmUserInputAdapter adapter = new UserInputMenuAdapter(reader);
+
+        JobController jobController = new JobController();
+
         while (true) {
+            JobController.showAvailableJobs();
+            int jobCount = JobController.getAvailableJobCount();
             System.out.print("Please state your choice\n");
-            int choice = adapter.readChosenOption(5);
+            int choice = adapter.readChosenOption(jobCount);
             if (choice == -1) {
                 continue;
             }
             System.out.printf("Chosen: %d\n", choice);
+            JobController.chooseJob(choice);
         }
         // when "do this"         (used as the client of the InputAdapter)
         // set and use strategy   (also the client of strategies)
