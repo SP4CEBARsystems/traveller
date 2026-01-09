@@ -28,7 +28,7 @@ public class UIBuilder {
         this.stats.add("day: " + stat);
     }
 
-    public void addStatLocation(int stat){
+    public void addStatLocation(String stat){
         this.stats.add("location: " + stat);
     }
 
