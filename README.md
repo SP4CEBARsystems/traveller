@@ -25,43 +25,43 @@ This readme document explains the usage of various design patterns from [refacto
 #### Strategy
 The strategies represent different jobs and will generate what happened after a day of working there.
 - Package: [src/MoneyStrategies](src/MoneyStrategies)
-- Interface: [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java)
-- context: [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java)
+  - Interface: [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java)
+  - Context: [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java)
+  - There are six strategies in the package.
 - Client: [src/GameState/GameContext.java](src/GameState/GameContext.java)
-- There are six strategies in the package.
 
 #### State
 State is game state, there are two states: choosing an occupation (InputState) and working this occupation and seeing the result of it (WorkingState).
 - Package: [src/GameState](src/GameState)
-- Interface: [src/GameState/IGameState.java](src/GameState/IGameState.java)
-- context: [src/GameState/GameContext.java](src/GameState/GameContext.java)
-- InputState: [src/GameState/InputState.java](src/GameState/InputState.java)
-- WorkingState: [src/GameState/WorkingState.java](src/GameState/WorkingState.java)
+  - Interface: [src/GameState/IGameState.java](src/GameState/IGameState.java)
+  - context: [src/GameState/GameContext.java](src/GameState/GameContext.java)
+  - InputState: [src/GameState/InputState.java](src/GameState/InputState.java)
+  - WorkingState: [src/GameState/WorkingState.java](src/GameState/WorkingState.java)
 - Client: [src/Main.java](src/Main.java)
 
 ### Creational Patterns
 #### Builder
 The builder builds the CLI UI, it can build statistics to read and a list of options that a user can choose from.
 - Package: [src/Builder](src/Builder)
-- Builder: [src/Builder/UIBuilder.java](src/Builder/UIBuilder.java)
+  - Builder: [src/Builder/UIBuilder.java](src/Builder/UIBuilder.java)
 
 #### Singleton
 The singleton will hold an array of all our different job strategies and will help the client with setting a job strategy.
 - Package: [src/StrategySingleton](src/StrategySingleton)
-- Singleton: [src/StrategySingleton/StrategyManager.java](src/StrategySingleton/StrategyManager.java)
+  - Singleton: [src/StrategySingleton/StrategyManager.java](src/StrategySingleton/StrategyManager.java)
 
 ### Structural Patterns
 #### Adapter
 The adapter adapts user input from the user input (service) to a chosen menu item.
 - Package: [src/UserInputAdapter](src/UserInputAdapter)
-- Adapter: [src/UserInputAdapter/UserInputMenuAdapter.java](src/UserInputAdapter/UserInputMenuAdapter.java)
-- Service: [src/UserInputAdapter/ConsoleReader.java](src/UserInputAdapter/ConsoleReader.java)
-- Interface: [src/UserInputAdapter/IAmUserInputAdapter.java](src/UserInputAdapter/IAmUserInputAdapter.java).
+  - Interface: [src/UserInputAdapter/IAmUserInputAdapter.java](src/UserInputAdapter/IAmUserInputAdapter.java).
+  - Adapter: [src/UserInputAdapter/UserInputMenuAdapter.java](src/UserInputAdapter/UserInputMenuAdapter.java)
+  - Service: [src/UserInputAdapter/ConsoleReader.java](src/UserInputAdapter/ConsoleReader.java)
 - Client: [src/Main.java](src/Main.java)
 
 #### Bridge
 The bridge will add a city property to a jobController controlled by Main, the city will affect how much job options are shown, the jobController will control the money Context.
 - Package: [src/JobLocationBridge](src/JobLocationBridge)
-- Abstraction: [src/JobLocationBridge/JobController.java](src/JobLocationBridge/JobController.java)
-- Interface: [src/JobLocationBridge/IAmACity.java](src/JobLocationBridge/IAmACity.java)
-- There are four concrete implementations.
+  - Interface: [src/JobLocationBridge/IAmACity.java](src/JobLocationBridge/IAmACity.java)
+  - Abstraction: [src/JobLocationBridge/JobController.java](src/JobLocationBridge/JobController.java)
+  - There are four concrete implementations.
