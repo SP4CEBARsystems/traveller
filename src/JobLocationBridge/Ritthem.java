@@ -10,9 +10,8 @@ public class Ritthem implements IAmACity {
     Ritthem () {
         StrategyManager strategy = StrategyManager.getInstance();
         this.jobs = new IMakeMoneyStrategy[]{
-                strategy.getStrategyByIndex(0),
-                strategy.getStrategyByIndex(1),
-                strategy.getStrategyByIndex(2),
+            strategy.getStrategyByIndex(0),
+            strategy.getStrategyByIndex(5),
         };
     }
 
