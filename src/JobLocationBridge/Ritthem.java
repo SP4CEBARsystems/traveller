@@ -1,12 +1,20 @@
 package JobLocationBridge;
 
 import MoneyStrategies.IMakeMoneyStrategy;
+import StrategySingleton.StrategyManager;
 
 public class Ritthem implements IAmACity {
     String description = "A farmer's village near industry and large harbors.";
+    IMakeMoneyStrategy[] jobs;
 
-    IMakeMoneyStrategy[] jobs = {
-    };
+    Ritthem () {
+        StrategyManager strategy = StrategyManager.getInstance();
+        this.jobs = new IMakeMoneyStrategy[]{
+                strategy.getStrategyByIndex(0),
+                strategy.getStrategyByIndex(1),
+                strategy.getStrategyByIndex(2),
+        };
+    }
 
     public IMakeMoneyStrategy[] getJobs() {
         return this.jobs;
