@@ -1,3 +1,5 @@
+package Builder;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +45,11 @@ public class UIBuilder {
     }
 
     public void addMenuOptions(String stat){
-        this.options.add((this.options.size() + 1) + "produce: " + stat);
+        this.options.add((this.options.size() + 1) + ". " + stat);
+    }
+
+    public void addJobOption(String jobName){
+        this.options.add((this.options.size() + 1) + ". " + jobName);
     }
 
     public void reset(){
