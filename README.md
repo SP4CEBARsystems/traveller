@@ -20,27 +20,38 @@ This readme document explains the usage of various design patterns from [refacto
 
 ## Design 
 
-### Behavioral Patterns
 
+### Behavioral Patterns
 #### Strategy
-The strategies live at [src/MoneyStrategies](src/MoneyStrategies). With interface [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java) and context [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java). [src/Main.java](src/Main.java) is the Client but is planned to be replaced by JobController.
+The strategies represent different jobs and will generate what happened after a day of working there.
+- Package: [src/MoneyStrategies](src/MoneyStrategies)
+- Interface: [src/MoneyStrategies/IMakeMoneyStrategy.java](src/MoneyStrategies/IMakeMoneyStrategy.java)
+- context: [src/MoneyStrategies/MoneyContext.java](src/MoneyStrategies/MoneyContext.java)
+- Client: [src/GameState/GameContext.java](src/GameState/GameContext.java)
 
 #### State
 State is game state, there are two states: choosing an occupation and working this occupation.
+- Package: [src/GameState](src/GameState)
 
 ### Creational Patterns
-
 #### Builder
-The builder at [src/UIBuilder.java](src/UIBuilder.java) builds the CLI UI, it lists options that a user can choose from, it is controlled by [src/Main.java](src/Main.java).
+The builder builds the CLI UI, it can build statistics to read and a list of options that a user can choose from.
+- Package: [src/Builder](src/Builder)
+- Builder: [src/Builder/UIBuilder.java](src/Builder/UIBuilder.java)
 
 #### Singleton
-The singleton will hold an array of all our different strategies and will help the client with setting a strategy.
+The singleton will hold an array of all our different job strategies and will help the client with setting a job strategy.
+- Package: [src/StrategySingleton](src/StrategySingleton)
 
 ### Structural Patterns
-
 #### Adapter
-The adapter pattern lives in the package at [src/UserInputAdapter](src/UserInputAdapter).
-The adapter at [src/UserInputAdapter/UserInputMenuAdapter.java](src/UserInputAdapter/UserInputMenuAdapter.java) adapts user input from [src/UserInputAdapter/ConsoleReader.java](src/UserInputAdapter/ConsoleReader.java) to a chosen menu item, its client is at [src/Main.java](src/Main.java) and interface is [src/UserInputAdapter/IAmUserInputAdapter.java](src/UserInputAdapter/IAmUserInputAdapter.java).
+The adapter adapts user input from the user input (service) to a chosen menu item.
+- Package: [src/UserInputAdapter](src/UserInputAdapter)
+- Adapter: [src/UserInputAdapter/UserInputMenuAdapter.java](src/UserInputAdapter/UserInputMenuAdapter.java)
+- Service: [src/UserInputAdapter/ConsoleReader.java](src/UserInputAdapter/ConsoleReader.java)
+- Interface: [src/UserInputAdapter/IAmUserInputAdapter.java](src/UserInputAdapter/IAmUserInputAdapter.java).
+- Client: [src/Main.java](src/Main.java)
 
-#### Decorator
+#### Bridge
 The bridge will add a city property to a jobController controlled by Main, the city will affect how much job options are shown, the jobController will control the money Context.
+- Package: [src/JobLocationBridge](src/JobLocationBridge)
