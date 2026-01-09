@@ -31,7 +31,7 @@ public class WorkingState implements IGameState {
         context.incrementDay();
 
         try {
-            System.out.println("\nPress Enter to continue to next day...");
+            System.out.println("\nPress Enter to travel to next city...");
             while (System.in.available() > 0) {
                 System.in.read();
             }
@@ -39,6 +39,9 @@ public class WorkingState implements IGameState {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        context.getJobController().randomizeCity();
+        System.out.println("You travelled to a new city!");
 
         context.setState(new InputState(context.getInputAdapter()));
     }
