@@ -23,18 +23,23 @@ public class JobController {
         this.city = cities[random];
     }
 
-    public void showAvailableJobs() {
+    public String getCityName() {
+        return this.city.getName();
+    }
+
+    public String getCityDescription() {
+        return this.city.getDescription();
+    }
+
+    public IMakeMoneyStrategy[] getAvailableJobs() {
         IMakeMoneyStrategy[] jobs = this.city.getJobs();
-        for (IMakeMoneyStrategy job : jobs) {
-            System.out.println(job.getJobName());
-        }
+        return jobs;
+//        for (IMakeMoneyStrategy job : jobs) {
+//            System.out.println(job.getJobName());
+//        }
     }
 
     public int getAvailableJobCount() {
-        return 0;
-    }
-
-    public void chooseJob(int choice) {
-        return;
+        return this.city.getJobCount();
     }
 }
