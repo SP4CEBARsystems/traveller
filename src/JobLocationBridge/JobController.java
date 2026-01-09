@@ -1,14 +1,33 @@
 package JobLocationBridge;
+import MoneyStrategies.IMakeMoneyStrategy;
+
+import java.util.concurrent.ThreadLocalRandom;
+
 
 public class JobController {
-//    implementation;
+    IAmACity city;
 
-//    JobController () {
-//
-//    }
+    IAmACity[] cities = {
+        new Middelburg(),
+        new Ritthem(),
+        new Zoutelande(),
+        new Amsterdam()
+    };
+
+    JobController () {
+        this.randomizeCity();
+    }
+
+    public void randomizeCity() {
+        int random = ThreadLocalRandom.current().nextInt(0, 4);
+        this.city = cities[random];
+    }
 
     public void showAvailableJobs() {
-        return;
+        IMakeMoneyStrategy[] jobs = this.city.getJobs();
+        for (IMakeMoneyStrategy job : jobs) {
+            System.out.println(job.getJobName());
+        }
     }
 
     public int getAvailableJobCount() {
@@ -18,5 +37,4 @@ public class JobController {
     public void chooseJob(int choice) {
         return;
     }
-
 }

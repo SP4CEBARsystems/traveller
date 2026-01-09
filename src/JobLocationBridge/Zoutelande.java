@@ -1,7 +1,26 @@
 package JobLocationBridge;
 
+import MoneyStrategies.IMakeMoneyStrategy;
+import StrategySingleton.StrategyManager;
+
 public class Zoutelande implements IAmACity {
-    public String[] getJobs() {
-        return new String[0];
+    String description = "A coastal village with a nice beach and a lot of tourism.";
+    IMakeMoneyStrategy[] jobs;
+
+    Zoutelande () {
+        StrategyManager strategy = StrategyManager.getInstance();
+        this.jobs = new IMakeMoneyStrategy[]{
+                strategy.getStrategyByIndex(0),
+                strategy.getStrategyByIndex(1),
+                strategy.getStrategyByIndex(2),
+        };
+    }
+
+    public IMakeMoneyStrategy[] getJobs() {
+        return this.jobs;
+    }
+
+    public int getJobCount() {
+        return this.jobs.length;
     }
 }
