@@ -1,5 +1,5 @@
 # Traveller
-CLI Game in Java where each day you have to choose how to make money. It was inspired by the travelling strategies example of the strategy design pattern on refactoring.guru.
+CLI Game in Java where each day you have to choose how to make money. It was inspired by the travelling strategies example of the strategy design pattern on refactoring.guru. [The repository is hosted on GitHub here](https://github.com/SP4CEBARsystems/traveller).
 
 ## Introduction
 This readme document explains the usage of various design patterns from [refactoring.guru](https://refactoring.guru) that are implemented within this program.
