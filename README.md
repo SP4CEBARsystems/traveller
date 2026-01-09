@@ -34,7 +34,7 @@ The strategies represent different jobs and will generate what happened after a 
 State is game state, there are two states: choosing an occupation (InputState) and working this occupation and seeing the result of it (WorkingState).
 - Package: [src/GameState](src/GameState)
   - Interface: [src/GameState/IGameState.java](src/GameState/IGameState.java)
-  - context: [src/GameState/GameContext.java](src/GameState/GameContext.java)
+  - Context: [src/GameState/GameContext.java](src/GameState/GameContext.java)
   - InputState: [src/GameState/InputState.java](src/GameState/InputState.java)
   - WorkingState: [src/GameState/WorkingState.java](src/GameState/WorkingState.java)
 - Client: [src/Main.java](src/Main.java)
